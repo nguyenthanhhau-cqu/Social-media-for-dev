@@ -15,7 +15,6 @@ const bcrypt = require('bcryptjs');
 //@desc add profile .. ..
 //access Public  
 router.get('/', auth , async (req, res) => {
-    
     try{
         const user = await User.findById(req.user.id).select('-password');
         res.json(user);
